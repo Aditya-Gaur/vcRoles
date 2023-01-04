@@ -34,7 +34,7 @@ async def on_voice_state_update(member, before, after):
                 await member.add_roles(discord.utils.get(member.guild.roles, name=REMOVE_ROLE))
 
 
-        elif not before.channel and after.channel:
+        elif after.channel:
 
             category = discord.utils.get(guild.categories, id = int(CATEGORY))
             if after.channel in category.channels:
